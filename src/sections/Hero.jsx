@@ -286,8 +286,10 @@ export default function Hero() {
 
           {/* The athlete */}
           <motion.img
-            src="/images/hero.png"
+            src="/images/hero.webp"
             alt="MaxFitPro Athlete"
+            fetchPriority="high"
+            loading="eager"
             style={{
               x: athleteX,
               y: athleteY,
