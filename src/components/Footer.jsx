@@ -128,7 +128,7 @@ export default function Footer() {
       </div>
       
       {/* Copyright Bar */}
-      <div className="border-t border-white/10 bg-black py-8 text-center relative z-10">
+      <div className="border-t border-white/10 bg-black py-8 pb-32 md:pb-8 text-center relative z-10">
         <p className="text-white/40 text-xs font-bold tracking-widest uppercase">© {new Date().getFullYear()} MAXFITPRO. All rights reserved.</p>
       </div>
     </footer>

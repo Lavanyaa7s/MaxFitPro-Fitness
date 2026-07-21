@@ -107,10 +107,17 @@ export default function Navigation() {
         </div>
       )}
 
-      {/* ── MOBILE BOTTOM TAB BAR ── */}
-      <div className={`md:hidden fixed bottom-0 left-0 w-full z-50 flex flex-col bg-black border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] pb-safe transition-transform duration-300 ${hidden ? 'translate-y-full' : 'translate-y-0'}`}>
+      {/* ── MOBILE BOTTOM NAVIGATION (Split Design like Video) ── */}
+      
+      {/* 1. Pink "Get Free Trial" Strip (Always visible, slides to bottom when tab bar hides) */}
+      <div className={`md:hidden fixed left-0 w-full z-50 transition-all duration-300 ${hidden ? 'bottom-0' : 'bottom-16'}`}>
+        <a href="#contact" className="w-full text-white py-2.5 flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-widest shadow-lg" style={{ background: 'linear-gradient(90deg, #F32D4B, #FF5C72)' }}>
+          Get Free Trial <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M18 15l-6-6-6 6"/></svg>
+        </a>
+      </div>
 
-        {/* Tab Bar Icons */}
+      {/* 2. Dark Tab Bar (Hides when scrolling down) */}
+      <div className={`md:hidden fixed bottom-0 left-0 w-full z-40 bg-black border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.8)] pb-[env(safe-area-inset-bottom)] transition-transform duration-300 ${hidden ? 'translate-y-full' : 'translate-y-0'}`}>
         <div className="w-full h-16 flex items-center justify-between px-6">
           
           {/* Location Icon (Left) */}
@@ -123,7 +130,7 @@ export default function Navigation() {
           
           {/* Center Logo */}
           <a href="#" className="p-1" onClick={() => window.scrollTo(0,0)}>
-            <img src="/images/logo-transparent.png?v=2" alt="Home" className="h-12 w-auto object-contain drop-shadow-md" />
+            <img src="/images/logo-transparent.png?v=2" alt="Home" className="h-10 w-auto object-contain drop-shadow-md" />
           </a>
           
           {/* Nav Options / Hamburger (Right) */}

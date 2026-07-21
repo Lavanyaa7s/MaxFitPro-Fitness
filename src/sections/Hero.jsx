@@ -159,10 +159,11 @@ export default function Hero() {
 
   return (
     <section
+      id="hero"
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative min-h-screen overflow-hidden"
+      className="relative min-h-[100dvh] overflow-hidden"
       style={{ background: '#090909' }}
     >
       {/* ── Layer 1: Red radial gradient ── */}
@@ -210,19 +211,10 @@ export default function Hero() {
       />
 
       {/* ── MAIN CONTENT ── */}
-      <div className="relative z-10 container mx-auto px-5 md:px-12 flex flex-col md:flex-row items-center min-h-screen pt-8 md:pt-24 pb-12 md:pb-0">
-
-        {/* Mobile Top Logo (Scrolls naturally with the page) */}
-        <div className="md:hidden w-full flex justify-center mb-4 z-50 order-0">
-          <img
-            src="/images/logo-transparent.png?v=2"
-            alt="MaxFitPro Fitness"
-            className="h-24 w-auto drop-shadow-2xl"
-          />
-        </div>
+      <div className="relative z-10 container mx-auto px-5 md:px-12 flex flex-col md:flex-row items-center min-h-[100dvh] pt-24 md:pt-24 pb-32 md:pb-0">
 
         {/* RIGHT — Cinematic Athlete (order-1 on mobile so it's on top, order-2 on desktop) */}
-        <div className="flex-1 relative flex items-end justify-center md:justify-end self-end h-[55vh] md:h-screen w-full z-0 overflow-visible order-1 md:order-2">
+        <div className="flex-1 relative flex items-end justify-center md:justify-end self-end h-[45dvh] md:h-[100dvh] w-full z-0 overflow-visible order-1 md:order-2 mt-4 md:mt-0">
           
           {/* Signature element: giant "NO EXCUSES" behind athlete */}
           <motion.div
@@ -364,7 +356,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-sm md:text-base max-w-xs mb-8 md:mb-10 leading-relaxed"
+            className="text-xs md:text-base max-w-xs mb-8 md:mb-10 leading-relaxed"
             style={{ color: '#555' }}
           >
             State-of-the-art equipment. Expert trainers. A community built to push you past every limit.
