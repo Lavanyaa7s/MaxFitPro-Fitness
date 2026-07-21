@@ -211,7 +211,16 @@ export default function Hero() {
       />
 
       {/* ── MAIN CONTENT ── */}
-      <div className="relative z-10 container mx-auto px-5 md:px-12 flex flex-col md:flex-row items-center min-h-[100dvh] pt-24 md:pt-24 pb-32 md:pb-0">
+      <div className="relative z-10 container mx-auto px-5 md:px-12 flex flex-col md:flex-row items-center min-h-[100dvh] pt-8 md:pt-24 pb-32 md:pb-0">
+
+        {/* Mobile Top Logo (Scrolls naturally with the page) */}
+        <div className="md:hidden w-full flex justify-center mb-4 z-50 order-0">
+          <img
+            src="/images/logo-transparent.png?v=2"
+            alt="MaxFitPro Fitness"
+            className="h-24 w-auto drop-shadow-2xl"
+          />
+        </div>
 
         {/* RIGHT — Cinematic Athlete (order-1 on mobile so it's on top, order-2 on desktop) */}
         <div className="flex-1 relative flex items-end justify-center md:justify-end self-end h-[45dvh] md:h-[100dvh] w-full z-0 overflow-visible order-1 md:order-2 mt-4 md:mt-0">
@@ -252,18 +261,22 @@ export default function Hero() {
             }}
           />
 
-          {/* Breathing red glow behind athlete */}
+          {/* Breathing red glow behind athlete (Optimized for mobile: Removed CSS blur filter) */}
           <motion.div
             style={{ x: glowX, y: glowY }}
             animate={{ opacity: [0.4, 0.75, 0.4], scale: [1, 1.06, 1] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 pointer-events-none rounded-full blur-[80px]"
+            className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 pointer-events-none rounded-full"
             style={{
               width: '100%',
               height: '80%',
-              background: 'radial-gradient(ellipse at 50% 80%, rgba(243,45,75,0.38), transparent 70%)',
+              background: 'radial-gradient(ellipse at 50% 80%, rgba(243,45,75,0.8), rgba(243,45,75,0.2) 40%, transparent 70%)',
             }}
           />
+
+          {/* Subtle glowing orb behind athlete (Optimized: Removed CSS blur filter for mobile performance) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[30vw] h-[90vw] md:h-[30vw] rounded-full opacity-40 mix-blend-screen pointer-events-none" 
+            style={{ background: 'radial-gradient(circle, rgba(243,45,75,0.8) 0%, rgba(243,45,75,0.4) 30%, rgba(0,0,0,0) 70%)' }} />
 
           {/* Ground shadow */}
           <div
