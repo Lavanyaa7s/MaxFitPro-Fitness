@@ -70,10 +70,9 @@ export default function Navigation() {
           <div>
             <a
               href="#contact"
-              className="group relative overflow-hidden px-6 py-2.5 rounded-full font-bold uppercase text-xs text-white shadow-[0_4px_20px_rgba(220,30,50,0.4)] hover:scale-105 transition-transform duration-300"
+              className="group relative overflow-hidden px-6 py-2.5 rounded-full font-bold uppercase text-xs text-white shadow-[0_4px_20px_rgba(220,30,50,0.4)] hover:scale-105 transition-transform duration-300 block"
               style={{ background: 'linear-gradient(135deg, #ff2e4c, #c0152a)' }}
             >
-              <span className="absolute inset-x-0 top-0 h-px bg-white/25 rounded-full" />
               <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
                 style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.1), transparent)' }}
               />
