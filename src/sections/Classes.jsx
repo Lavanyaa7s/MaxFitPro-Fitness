@@ -1,39 +1,35 @@
 import { motion } from 'framer-motion';
 
 export default function Classes() {
-  const zones = [
+  const classes = [
     { 
-      tag: 'ZONE 01',
-      title: 'Free Weights Arena', 
-      subtitle: 'HEAVY IRON & DUMBBELLS UP TO 60KG',
-      desc: 'Pure iron & olympic benches. Engineered for maximum hypertrophy and raw strength building.',
-      icon: '🏋️‍♂️',
-      stats: 'Olympic Racks • Dumbbells 2kg–60kg • Deadlift Platforms'
+      title: 'Free Weights', 
+      desc: 'Pure iron. Push your limits in our extensive free weights zone.',
+      img: '/images/weights.png',
+      colSpan: 'col-span-12 md:col-span-7',
+      aspect: 'aspect-[16/9]'
     },
     { 
-      tag: 'ZONE 02',
-      title: 'Machine & Iso-Zone', 
-      subtitle: 'PLATE-LOADED & LEVERAGE MACHINES',
-      desc: 'Precision target machinery for isolated muscle building with zero joint stress.',
-      icon: '⚙️',
-      stats: 'Plate-Loaded Rigs • Cable Crossovers • Leg Press Stations'
+      title: 'Machine Zone', 
+      desc: 'Precision engineering for isolated muscle targeting.',
+      img: '/images/machines.png',
+      colSpan: 'col-span-12 md:col-span-5',
+      aspect: 'aspect-[4/5] md:aspect-auto h-full'
     },
     { 
-      tag: 'ZONE 03',
-      title: 'Endurance & Cardio Deck', 
-      subtitle: 'HIIT & CARDIO EQUIPMENT',
-      desc: 'High-intensity treadmills, assault bikes, and rowers designed to build unstoppable stamina.',
-      icon: '🔥',
-      stats: 'Curved Treadmills • Concept2 Rowers • Air Bikes'
+      title: 'Cardio Deck', 
+      desc: 'High-intensity equipment to build unbreakable endurance.',
+      img: '/images/cardio.png',
+      colSpan: 'col-span-12',
+      aspect: 'aspect-[21/9]'
     }
   ];
 
   return (
-    <section id="classes" className="py-20 md:py-32 bg-[#090909] text-white relative border-t border-white/10">
+    <section id="classes" className="py-24 md:py-32 bg-black relative">
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -41,11 +37,12 @@ export default function Classes() {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <span className="text-accent font-bold tracking-widest uppercase text-xs mb-3 block flex items-center gap-3">
-              <span className="w-8 h-[2px] bg-accent inline-block" /> Facility Specs
+            <span className="text-accent font-bold tracking-widest uppercase text-xs mb-6 block flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-accent inline-block" /> The Arsenal
             </span>
-            <h2 className="text-4xl md:text-6xl font-black text-white leading-tight uppercase tracking-tight">
-              TRAINING <span className="text-accent">ZONES.</span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight uppercase tracking-tighter">
+              TRAINING <br/>
+              <span className="text-accent">ZONES.</span>
             </h2>
           </motion.div>
           
@@ -54,45 +51,48 @@ export default function Classes() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white/60 max-w-sm text-sm font-medium leading-relaxed"
+            className="text-white/70 max-w-sm text-lg font-medium leading-relaxed"
           >
-            Three specialized training zones designed to optimize every aspect of your performance. No waiting, no compromises.
+            Three specialized zones designed to optimize every aspect of your performance. No compromises.
           </motion.p>
         </div>
 
-        {/* Zones Grid (Sleek Dark Cards without photo images) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {zones.map((zone, idx) => (
+        <div className="grid grid-cols-12 gap-4 md:gap-6">
+          {classes.map((cls, idx) => (
             <motion.div 
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="group p-8 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-accent/50 transition-all duration-300 flex flex-col justify-between"
+              transition={{ duration: 0.8, delay: idx * 0.15 }}
+              className={`${cls.colSpan} relative group overflow-hidden bg-black ${cls.aspect}`}
+              data-cursor="VIEW"
             >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-2xl">{zone.icon}</span>
-                  <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1 bg-accent/10 text-accent border border-accent/20 rounded-full">
-                    {zone.tag}
-                  </span>
+              {/* Image */}
+              <div className="absolute inset-0">
+                <img 
+                  src={cls.img} 
+                  alt={cls.title} 
+                  className="w-full h-full object-cover grayscale-0 md:grayscale opacity-90 md:opacity-60 group-hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                />
+              </div>
+              
+              {/* Color Overlay on Hover / Active */}
+              <div className="absolute inset-0 bg-accent/80 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
+              {/* Content */}
+              <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+                <h3 className="text-3xl md:text-4xl font-black text-white mb-3 uppercase tracking-wider">{cls.title}</h3>
+                <div className="h-0 overflow-hidden group-hover:h-auto transition-all duration-500">
+                  <p className="text-white/90 text-lg max-w-md font-medium translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                    {cls.desc}
+                  </p>
                 </div>
-
-                <h3 className="text-2xl font-black text-white uppercase tracking-wide mb-1 group-hover:text-accent transition-colors">
-                  {zone.title}
-                </h3>
-                <p className="text-accent text-[10px] font-bold tracking-widest uppercase mb-4">
-                  {zone.subtitle}
-                </p>
-                <p className="text-white/60 text-xs leading-relaxed font-medium mb-6">
-                  {zone.desc}
-                </p>
               </div>
 
-              <div className="pt-4 border-t border-white/10">
-                <span className="text-[10px] text-white/40 font-mono block mb-1">EQUIPMENT SPECS</span>
-                <p className="text-xs text-white/80 font-semibold">{zone.stats}</p>
+              {/* Top Right Brutalist Arrow */}
+              <div className="absolute top-8 right-8 w-12 h-12 bg-white flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 text-black">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
             </motion.div>
           ))}
