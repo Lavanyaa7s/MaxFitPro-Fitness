@@ -293,15 +293,14 @@ export default function Hero() {
             style={{
               x: athleteX,
               y: athleteY,
+              WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%)',
+              maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%)',
             }}
             initial={{ opacity: 0, y: 80, scale: 0.88 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1.3, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="relative z-10 w-full max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] h-[55vh] md:h-[110vh] object-contain object-bottom filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
           />
-
-          {/* Soft bottom edge fade to blend flat cut image seamlessly into dark background */}
-          <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#090909] via-[#090909]/70 to-transparent z-20 pointer-events-none" />
         </div>
 
         {/* LEFT — Text (order-2 on mobile so it sits BELOW the athlete, order-1 on desktop) */}
