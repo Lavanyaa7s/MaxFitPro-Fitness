@@ -15,8 +15,8 @@ export default function Footer() {
     <footer id="contact" className="relative overflow-hidden bg-black text-white">
       
       {/* ── TOP CTA BANNER ── */}
-      <div className="relative border-b border-white/10 py-20 px-4 md:px-8 bg-gradient-to-b from-[#090909] to-black">
-        <div className="container mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+      <div className="relative border-b border-white/10 py-10 md:py-20 px-4 md:px-8 bg-gradient-to-b from-[#090909] to-black">
+        <div className="container mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 text-center md:text-left">
           <div>
             <span className="text-accent font-bold uppercase tracking-widest text-xs mb-2 block">
               Start Your Journey
@@ -38,7 +38,7 @@ export default function Footer() {
       </div>
 
       {/* ── MAIN FOOTER CONTENT ── */}
-      <div className="container mx-auto px-4 md:px-8 py-16 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 py-10 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-8 relative z-10">
         
         {/* Brand Info */}
         <div className="md:col-span-5 pr-0 lg:pr-12">

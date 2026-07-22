@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Locations() {
   return (
-    <section id="locations" className="relative py-24 bg-[#090909] text-white overflow-hidden border-t border-white/10">
+    <section id="locations" className="relative py-12 md:py-24 bg-[#090909] text-white overflow-hidden border-t border-white/10">
       {/* Background glow */}
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full pointer-events-none opacity-20"
@@ -11,7 +11,7 @@ export default function Locations() {
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
+        <div className="flex flex-col items-center text-center mb-8 md:mb-16">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
