@@ -68,7 +68,7 @@ export default function Footer() {
         >
           <a href="#" className="mb-8 block">
             <img
-              src="/images/logo.png"
+              src="/images/Logo.png"
               alt="MaxFitPro Fitness"
               className="h-16 w-auto"
               style={{ mixBlendMode: 'screen', filter: 'invert(1)' }}
