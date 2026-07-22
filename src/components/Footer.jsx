@@ -1,136 +1,129 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start']
-  });
-
-  const bgY = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
+  const navLinks = [
+    { label: 'Home', href: '#hero' },
+    { label: 'About', href: '#about' },
+    { label: 'Classes', href: '#classes' },
+    { label: 'Why Choose Us', href: '#whychooseus' },
+    { label: 'Trainers', href: '#trainers' },
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'Locations', href: '#locations' },
+  ];
 
   return (
-    <footer id="contact" ref={containerRef} className="relative overflow-hidden bg-black">
+    <footer id="contact" className="relative overflow-hidden bg-black text-white">
       
-      {/* Massive CTA Section */}
-      <div className="relative min-h-[60vh] flex flex-col items-center justify-center text-center px-4 md:px-8 py-32 overflow-hidden border-b border-white/10" data-cursor="JOIN">
-        
-        {/* Cinematic Background */}
-        <motion.div 
-          style={{ y: bgY }}
-          className="absolute inset-0 z-0 opacity-30 pointer-events-none"
-        >
-          <img 
-            src="/images/fitness-program.png" 
-            alt="Ready to change your life?"
-            className="w-full h-full object-cover object-top filter grayscale contrast-125"
-          />
-        </motion.div>
-
-        <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.9] mb-12 uppercase tracking-tighter"
-          >
-            START <br/>
-            <span className="text-accent">NOW.</span>
-          </motion.h2>
-
-          <motion.a 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            href="https://wa.me/60185713889" 
-            className="inline-flex h-16 items-center justify-center bg-accent px-12 font-bold text-white transition-all duration-300 hover:bg-white hover:text-black"
-          >
-            <span className="uppercase tracking-widest text-sm flex items-center gap-3">
-              Join The Elite <span>→</span>
+      {/* ── TOP CTA BANNER ── */}
+      <div className="relative border-b border-white/10 py-20 px-4 md:px-8 bg-gradient-to-b from-[#090909] to-black">
+        <div className="container mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+          <div>
+            <span className="text-accent font-bold uppercase tracking-widest text-xs mb-2 block">
+              Start Your Journey
             </span>
-          </motion.a>
+            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-white">
+              READY TO <span className="text-accent">TRANSFORM?</span>
+            </h2>
+          </div>
+
+          <a 
+            href="https://wa.me/60185713889" 
+            target="_blank" 
+            rel="noreferrer"
+            className="inline-flex h-14 items-center justify-center bg-accent px-10 rounded-full font-bold text-white uppercase tracking-widest text-xs hover:bg-white hover:text-black transition-all duration-300 shadow-[0_4px_25px_rgba(243,45,75,0.4)] shrink-0"
+          >
+            Claim Free Trial →
+          </a>
         </div>
       </div>
 
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 pb-16 pt-20 relative z-10 bg-black">
+      {/* ── MAIN FOOTER CONTENT ── */}
+      <div className="container mx-auto px-4 md:px-8 py-16 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 relative z-10">
         
-        {/* Brand Col */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="md:col-span-5 pr-0 lg:pr-12"
-        >
-          <a href="#" className="mb-8 block">
+        {/* Brand Info */}
+        <div className="md:col-span-5 pr-0 lg:pr-12">
+          <a href="#" className="mb-6 block">
             <img
               src="/images/Logo.png"
               alt="MaxFitPro Fitness"
-              className="h-16 w-auto"
-              style={{ filter: 'invert(1)' }}
+              className="h-16 w-auto filter invert"
             />
           </a>
-          <p className="text-white/60 mb-8 leading-relaxed font-medium">
-            The premium training ground in Pontian. Engineered for those who demand excellence in every rep. Join the community today.
+          <p className="text-white/60 mb-8 leading-relaxed font-medium text-sm">
+            The premium training ground in Pontian. Engineered for those who demand excellence in every rep. Join our high-performance community today.
           </p>
-          <div className="flex gap-4">
-            <a href="#" className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent transition-colors font-bold text-sm tracking-widest">
-              FB
-            </a>
-            <a href="#" className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent transition-colors font-bold text-sm tracking-widest">
-              IG
-            </a>
-            <a href="#" className="w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent transition-colors font-bold text-sm tracking-widest">
-              TK
-            </a>
-          </div>
-        </motion.div>
 
-        {/* Branch 1 */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="md:col-span-4"
-        >
-          <h4 className="font-black text-white text-xl mb-8 tracking-wider uppercase">HQ / Pontian</h4>
-          <ul className="flex flex-col gap-6 text-white/70">
-            <li className="flex items-start gap-4">
-              <span className="leading-relaxed font-medium text-sm">55-1, 56-1,56, 2, Jalan Emas 2<br/> Pusat perniagaan kota emas<br/> 82000 Pontian District, Johor</span>
-            </li>
-            <li className="flex flex-col gap-1 font-medium text-sm">
-              <span>TEL: 018-571 3889</span>
-              <span>TEL: 010-760 3889</span>
-            </li>
+          {/* Social Icons */}
+          <div className="flex gap-3">
+            {[
+              { name: 'FB', href: '#' },
+              { name: 'IG', href: '#' },
+              { name: 'TK', href: '#' },
+              { name: 'WA', href: 'https://wa.me/60185713889' }
+            ].map(social => (
+              <a 
+                key={social.name}
+                href={social.href}
+                className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-accent hover:border-accent transition-all duration-300 font-bold text-xs"
+              >
+                {social.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Quick Navigation Links */}
+        <div className="md:col-span-3">
+          <h4 className="font-bold text-white text-sm tracking-widest uppercase mb-6 text-accent">
+            Quick Navigation
+          </h4>
+          <ul className="flex flex-col gap-3 text-sm text-white/60 font-medium">
+            {navLinks.map(link => (
+              <li key={link.label}>
+                <a href={link.href} className="hover:text-white transition-colors duration-200 block py-1">
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
-        </motion.div>
+        </div>
 
-        {/* Branch 2 */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="md:col-span-3"
-        >
-          <h4 className="font-black text-white text-xl mb-8 tracking-wider uppercase">Branch Two</h4>
-          <div className="border border-white/10 p-6">
-            <span className="inline-block px-2 py-1 bg-white text-black font-bold text-xs uppercase tracking-widest mb-4">Coming Soon</span>
-            <p className="text-white/50 leading-relaxed text-sm font-medium">Details for our next elite training ground will be announced shortly.</p>
+        {/* Operating Hours & Contact */}
+        <div className="md:col-span-4">
+          <h4 className="font-bold text-white text-sm tracking-widest uppercase mb-6 text-accent">
+            Hours & Contact
+          </h4>
+          <div className="space-y-4 text-sm text-white/70">
+            <div>
+              <span className="block font-bold text-white text-xs uppercase tracking-wider text-white/40 mb-1">Operating Hours</span>
+              <p className="font-medium text-white/90">Monday – Sunday: 8:00 AM – 11:00 PM</p>
+            </div>
+
+            <div>
+              <span className="block font-bold text-white text-xs uppercase tracking-wider text-white/40 mb-1">Phone Enquiries</span>
+              <p className="font-medium text-white/90">018-571 3889 / 010-760 3889</p>
+            </div>
+
+            <div>
+              <span className="block font-bold text-white text-xs uppercase tracking-wider text-white/40 mb-1">Location</span>
+              <p className="font-medium text-white/90">Pusat Perniagaan Kota Emas, Pontian</p>
+            </div>
           </div>
-        </motion.div>
+        </div>
 
       </div>
       
-      {/* Copyright Bar */}
+      {/* ── COPYRIGHT BAR ── */}
       <div className="border-t border-white/10 bg-black py-8 pb-32 md:pb-8 text-center relative z-10">
-        <p className="text-white/40 text-xs font-bold tracking-widest uppercase">© {new Date().getFullYear()} MAXFITPRO. All rights reserved.</p>
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-white/40 text-xs font-semibold tracking-wider">
+          <p>© {new Date().getFullYear()} MAXFITPRO FITNESS. ALL RIGHTS RESERVED.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-white/70 transition-colors">PRIVACY POLICY</a>
+            <a href="#" className="hover:text-white/70 transition-colors">TERMS OF SERVICE</a>
+          </div>
+        </div>
       </div>
+
     </footer>
   );
 }

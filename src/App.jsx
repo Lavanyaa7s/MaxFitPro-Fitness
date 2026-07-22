@@ -8,6 +8,7 @@ import WhyChooseUs from './sections/WhyChooseUs';
 import Trainers from './sections/Trainers';
 import Testimonial from './sections/Testimonial';
 import Pricing from './sections/Pricing';
+import Locations from './sections/Locations';
 import Footer from './components/Footer';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Trainers />
           <Testimonial />
           <Pricing />
+          <Locations />
         </main>
         <Footer />
       </div>

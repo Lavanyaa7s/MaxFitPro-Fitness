@@ -7,7 +7,7 @@ export default function Navigation() {
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
 
-  const links = ['Home', 'About', 'Classes', 'Team', 'Pricing', 'Contact'];
+  const links = ['Home', 'About', 'Classes', 'Team', 'Pricing', 'Locations', 'Contact'];
 
   useEffect(() => {
     const handleScroll = () => {
