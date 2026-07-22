@@ -1,5 +1,5 @@
-import { motion, useMotionValue, useTransform, animate, AnimatePresence } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { useRef, useState } from 'react';
 
 // ── Real SVG Social Icons ──────────────────────────
 const SOCIALS = [
@@ -114,40 +114,7 @@ function MouseSpotlight({ mouseX, mouseY }) {
   );
 }
 
-// ── HERO ATHLETE SLIDES ────────────────────────────
-const HERO_SLIDES = [
-  {
-    image: '/images/hero.webp',
-    badge1: '🏆 10K SQFT GYM',
-    badge2: '💪 FREE WEIGHTS'
-  },
-  {
-    image: '/images/hero-2.webp',
-    badge1: '⚡ PRO MACHINES',
-    badge2: '🔥 CARDIO DECK'
-  },
-  {
-    image: '/images/hero-3.webp',
-    badge1: '🥊 COMBAT & BOXING',
-    badge2: '💥 STRENGTH ZONE'
-  },
-  {
-    image: '/images/hero-4.webp',
-    badge1: '🏋️ HEAVY LIFTING',
-    badge2: '🚀 PERSONAL TRAINERS'
-  }
-];
-
 export default function Hero() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
   const containerRef = useRef(null);
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
@@ -295,38 +262,26 @@ export default function Hero() {
             }}
           />
 
-          {/* Floating Badges for Mobile & Desktop (Dynamic for current slide) */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`b1-${currentSlide}`}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.5 }}
-              className="absolute top-8 left-2 md:left-6 z-20 px-3.5 py-1.5 rounded-full bg-black/70 border border-accent/40 backdrop-blur-md flex items-center gap-2 shadow-lg pointer-events-none"
-            >
-              <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
-              <span className="text-[10px] font-black uppercase tracking-wider text-white">
-                {HERO_SLIDES[currentSlide].badge1}
-              </span>
-            </motion.div>
-          </AnimatePresence>
+          {/* Floating Badges for Mobile & Desktop (Fills empty space with high-energy highlights) */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="absolute top-8 left-2 md:left-6 z-20 px-3 py-1.5 rounded-full bg-black/60 border border-accent/40 backdrop-blur-md flex items-center gap-2 shadow-lg pointer-events-none"
+          >
+            <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
+            <span className="text-[10px] font-black uppercase tracking-wider text-white">🏆 10K SQFT GYM</span>
+          </motion.div>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`b2-${currentSlide}`}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              transition={{ duration: 0.5 }}
-              className="absolute top-16 right-2 md:right-6 z-20 px-3.5 py-1.5 rounded-full bg-black/70 border border-accent/40 backdrop-blur-md flex items-center gap-2 shadow-lg pointer-events-none"
-            >
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-wider text-white">
-                {HERO_SLIDES[currentSlide].badge2}
-              </span>
-            </motion.div>
-          </AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="absolute top-16 right-2 md:right-6 z-20 px-3 py-1.5 rounded-full bg-black/60 border border-accent/40 backdrop-blur-md flex items-center gap-2 shadow-lg pointer-events-none"
+          >
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-[10px] font-black uppercase tracking-wider text-white">⚡ PRO EQUIPMENT</span>
+          </motion.div>
 
           {/* Breathing red glow behind athlete (Optimized for mobile: Removed CSS blur filter) */}
           <motion.div
@@ -341,7 +296,7 @@ export default function Hero() {
             }}
           />
 
-          {/* Subtle glowing orb behind athlete */}
+          {/* Subtle glowing orb behind athlete (Optimized: Removed CSS blur filter & blend mode for mobile performance) */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[30vw] h-[90vw] md:h-[30vw] rounded-full opacity-40 pointer-events-none" 
             style={{ background: 'radial-gradient(circle, rgba(243,45,75,0.8) 0%, rgba(243,45,75,0.4) 30%, rgba(0,0,0,0) 70%)' }} />
 
@@ -351,41 +306,23 @@ export default function Hero() {
             style={{ width: '65%', height: '20px', background: 'rgba(243,45,75,0.3)' }}
           />
 
-          {/* Animated Athlete Carousel */}
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentSlide}
-              src={HERO_SLIDES[currentSlide].image}
-              alt="MaxFitPro Athlete"
-              fetchPriority="high"
-              loading="eager"
-              style={{
-                x: athleteX,
-                y: athleteY,
-                WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%)',
-                maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%)',
-              }}
-              initial={{ opacity: 0, scale: 0.92, y: 30 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 1.05, y: -20 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 w-full max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] h-[55vh] md:h-[110vh] object-contain object-bottom filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
-            />
-          </AnimatePresence>
-
-          {/* Slide Indicator Dots */}
-          <div className="absolute -bottom-2 md:bottom-2 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 bg-black/60 px-3 py-1.5 rounded-full border border-white/10 backdrop-blur-md">
-            {HERO_SLIDES.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentSlide(i)}
-                className={`h-2 rounded-full transition-all duration-500 ${
-                  currentSlide === i ? 'w-6 bg-accent' : 'w-2 bg-white/30 hover:bg-white/60'
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
+          {/* The athlete */}
+          <motion.img
+            src="/images/hero.webp"
+            alt="MaxFitPro Athlete"
+            fetchPriority="high"
+            loading="eager"
+            style={{
+              x: athleteX,
+              y: athleteY,
+              WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%)',
+              maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 98%)',
+            }}
+            initial={{ opacity: 0, y: 80, scale: 0.88 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1.3, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="relative z-10 w-full max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] h-[55vh] md:h-[110vh] object-contain object-bottom filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+          />
         </div>
 
         {/* LEFT — Text (order-2 on mobile so it sits BELOW the athlete, order-1 on desktop) */}
