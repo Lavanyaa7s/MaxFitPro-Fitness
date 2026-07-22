@@ -71,7 +71,7 @@ export default function Footer() {
               src="/images/Logo.png"
               alt="MaxFitPro Fitness"
               className="h-16 w-auto"
-              style={{ mixBlendMode: 'screen', filter: 'invert(1)' }}
+              style={{ filter: 'invert(1)' }}
             />
           </a>
           <p className="text-white/60 mb-8 leading-relaxed font-medium">

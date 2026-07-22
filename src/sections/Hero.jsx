@@ -186,9 +186,9 @@ export default function Hero() {
       {/* ── Layer 3: Subtle animated grid ── */}
       <AnimatedGrid />
 
-      {/* ── Layer 4: Noise texture ── */}
+      {/* ── Layer 4: Noise texture (Desktop only for performance) ── */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
+        className="hidden md:block absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
           backgroundSize: '128px 128px',
@@ -274,8 +274,8 @@ export default function Hero() {
             }}
           />
 
-          {/* Subtle glowing orb behind athlete (Optimized: Removed CSS blur filter for mobile performance) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[30vw] h-[90vw] md:h-[30vw] rounded-full opacity-40 mix-blend-screen pointer-events-none" 
+          {/* Subtle glowing orb behind athlete (Optimized: Removed CSS blur filter & blend mode for mobile performance) */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[30vw] h-[90vw] md:h-[30vw] rounded-full opacity-40 pointer-events-none" 
             style={{ background: 'radial-gradient(circle, rgba(243,45,75,0.8) 0%, rgba(243,45,75,0.4) 30%, rgba(0,0,0,0) 70%)' }} />
 
           {/* Ground shadow */}
@@ -293,14 +293,11 @@ export default function Hero() {
             style={{
               x: athleteX,
               y: athleteY,
-              mixBlendMode: 'lighten',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
-              filter: 'drop-shadow(0 0 60px rgba(243,45,75,0.4)) drop-shadow(-20px 0 40px rgba(243,45,75,0.2)) drop-shadow(0 40px 70px rgba(0,0,0,0.95))',
             }}
             initial={{ opacity: 0, y: 80, scale: 0.88 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1.3, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 w-full max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] h-[55vh] md:h-[110vh] object-contain object-bottom"
+            className="relative z-10 w-full max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] h-[55vh] md:h-[110vh] object-contain object-bottom filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
           />
         </div>
 

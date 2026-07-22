@@ -77,8 +77,8 @@ export default function Classes() {
                 />
               </div>
               
-              {/* Solid Color Overlay on Hover */}
-              <div className="absolute inset-0 bg-accent mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Color Overlay on Hover */}
+              <div className="absolute inset-0 bg-accent/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
               {/* Content */}
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
