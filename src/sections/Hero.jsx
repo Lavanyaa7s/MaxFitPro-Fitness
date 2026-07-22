@@ -211,19 +211,19 @@ export default function Hero() {
       />
 
       {/* ── MAIN CONTENT ── */}
-      <div className="relative z-10 container mx-auto px-4 md:px-12 flex flex-col md:flex-row items-center min-h-[100dvh] pt-2 md:pt-24 pb-32 md:pb-0">
+      <div className="relative z-10 container mx-auto px-4 md:px-12 flex flex-col md:flex-row items-center min-h-[100dvh] pt-1 md:pt-24 pb-32 md:pb-0">
 
-        {/* Mobile Top Logo (35% Larger, Bold & Prominent) */}
-        <div className="md:hidden w-full flex justify-center mb-1 z-50 order-0">
+        {/* Mobile Top Logo (Large, Crystal Clear & Prominent from arm's length) */}
+        <div className="md:hidden w-full flex justify-center mb-0 mt-1 z-50 order-0">
           <img
             src="/images/logo-transparent.png?v=2"
             alt="MaxFitPro Fitness"
-            className="h-20 w-auto drop-shadow-[0_4px_20px_rgba(243,45,75,0.35)]"
+            className="h-28 w-auto drop-shadow-[0_4px_30px_rgba(243,45,75,0.45)]"
           />
         </div>
 
-        {/* RIGHT — Cinematic Athlete (Pushed up to start immediately below logo) */}
-        <div className="flex-1 relative flex items-end justify-center md:justify-end self-end h-[52dvh] md:h-[100dvh] w-full z-0 overflow-visible order-1 md:order-2 mt-0">
+        {/* RIGHT — Cinematic Athlete */}
+        <div className="flex-1 relative flex items-end justify-center md:justify-end self-end h-[50dvh] md:h-[100dvh] w-full z-0 overflow-visible order-1 md:order-2 mt-0">
 
           {/* Outlined circle behind athlete */}
           <motion.div
@@ -240,7 +240,7 @@ export default function Hero() {
             }}
           />
 
-          {/* Floating Badges for Mobile & Desktop (Positioned high at top so they clear athlete head) */}
+          {/* Floating Badges for Mobile & Desktop */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -261,7 +261,7 @@ export default function Hero() {
             <span className="text-[10px] font-black uppercase tracking-wider text-white">⚡ PRO EQUIPMENT</span>
           </motion.div>
 
-          {/* Breathing red glow behind athlete (Optimized for mobile: Removed CSS blur filter) */}
+          {/* Breathing red glow behind athlete */}
           <motion.div
             style={{ x: glowX, y: glowY }}
             animate={{ opacity: [0.4, 0.75, 0.4], scale: [1, 1.06, 1] }}
@@ -274,7 +274,7 @@ export default function Hero() {
             }}
           />
 
-          {/* Subtle glowing orb behind athlete (Optimized: Removed CSS blur filter & blend mode for mobile performance) */}
+          {/* Subtle glowing orb behind athlete */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[30vw] h-[90vw] md:h-[30vw] rounded-full opacity-40 pointer-events-none" 
             style={{ background: 'radial-gradient(circle, rgba(243,45,75,0.8) 0%, rgba(243,45,75,0.4) 30%, rgba(0,0,0,0) 70%)' }} />
 
@@ -303,32 +303,32 @@ export default function Hero() {
           />
         </div>
 
-        {/* LEFT — Text (order-2 on mobile so it sits BELOW the athlete, order-1 on desktop) */}
+        {/* LEFT — Text (Overlaps athlete by ~25px on mobile to break the grid & add depth) */}
         <motion.div
           style={{ x: textX, y: textY }}
-          className="flex-1 flex flex-col justify-center py-8 md:py-0 z-20 relative order-2 md:order-1 text-center md:text-left items-center md:items-start"
+          className="flex-1 flex flex-col justify-center py-4 md:py-0 z-20 relative order-2 md:order-1 text-center md:text-left items-center md:items-start -mt-8 md:mt-0"
         >
-          {/* Overline Badge (Glass effect + subtle red glow) */}
+          {/* Overline Badge (Glass effect + subtle red glow - overlapped by athlete bottom fade) */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/15 backdrop-blur-md mb-5 shadow-[0_4px_25px_rgba(0,0,0,0.6)]"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_#F32D4B]" />
-            <span className="uppercase tracking-[0.25em] text-[10px] font-bold text-white/90">
+            <span className="uppercase tracking-[0.25em] text-[10px] font-bold text-white">
               Pontian's Premier Gym
             </span>
           </motion.div>
 
-          {/* 2026 Premium Block Headline (THEBLOCK font style with vertical gradient fill) */}
+          {/* Headline Hierarchy: Line 1 = Solid Crisp White, Line 2 = Emotional Payoff Red Gradient */}
           <div className="mb-6 md:mb-8 flex flex-col gap-0 font-block tracking-wide">
             <motion.div
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="block font-black uppercase leading-[0.88] bg-gradient-to-b from-white via-[#f0f0f0] to-[#b0b0b0] bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+              <span className="block font-black uppercase leading-[0.88] text-white drop-shadow-[0_6px_20px_rgba(0,0,0,0.9)]"
                 style={{ fontSize: 'clamp(3.5rem, 9.5vw, 7.5rem)' }}>
                 BUILD YOUR BODY
               </span>
@@ -339,7 +339,7 @@ export default function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="block font-black uppercase leading-[0.88] bg-gradient-to-b from-white via-[#FF6B81] to-[#F32D4B] bg-clip-text text-transparent drop-shadow-[0_10px_30px_rgba(243,45,75,0.6)]"
+              <span className="block font-black uppercase leading-[0.88] bg-gradient-to-r from-[#FF2D4D] via-[#FF6B81] to-[#FF2D4D] bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,45,77,0.7)]"
                 style={{ fontSize: 'clamp(3.5rem, 9.5vw, 7.5rem)' }}>
                 BUILD YOUR LEGACY
               </span>
