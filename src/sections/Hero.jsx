@@ -211,19 +211,19 @@ export default function Hero() {
       />
 
       {/* ── MAIN CONTENT ── */}
-      <div className="relative z-10 container mx-auto px-5 md:px-12 flex flex-col md:flex-row items-center min-h-[100dvh] pt-8 md:pt-24 pb-32 md:pb-0">
+      <div className="relative z-10 container mx-auto px-4 md:px-12 flex flex-col md:flex-row items-center min-h-[100dvh] pt-2 md:pt-24 pb-32 md:pb-0">
 
-        {/* Mobile Top Logo (Scrolls naturally with the page) */}
-        <div className="md:hidden w-full flex justify-center mb-4 z-50 order-0">
+        {/* Mobile Top Logo (35% Larger, Bold & Prominent) */}
+        <div className="md:hidden w-full flex justify-center mb-1 z-50 order-0">
           <img
             src="/images/logo-transparent.png?v=2"
             alt="MaxFitPro Fitness"
-            className="h-24 w-auto drop-shadow-2xl"
+            className="h-20 w-auto drop-shadow-[0_4px_20px_rgba(243,45,75,0.35)]"
           />
         </div>
 
-        {/* RIGHT — Cinematic Athlete (order-1 on mobile so it's on top, order-2 on desktop) */}
-        <div className="flex-1 relative flex items-end justify-center md:justify-end self-end h-[45dvh] md:h-[100dvh] w-full z-0 overflow-visible order-1 md:order-2 mt-4 md:mt-0">
+        {/* RIGHT — Cinematic Athlete (Pushed up to start immediately below logo) */}
+        <div className="flex-1 relative flex items-end justify-center md:justify-end self-end h-[52dvh] md:h-[100dvh] w-full z-0 overflow-visible order-1 md:order-2 mt-0">
 
           {/* Outlined circle behind athlete */}
           <motion.div
