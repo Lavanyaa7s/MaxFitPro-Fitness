@@ -5,6 +5,7 @@
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Inter', system-ui, sans-serif;
+  --font-block: 'Bebas Neue', 'Anton', sans-serif;
 
   /* Restored brand colors for alternating sections */
   --color-brand-bg: #111111; /* Dark sections */
@@ -40,6 +41,10 @@
   }
 
   html { scroll-behavior: smooth; }
+
+  .font-block {
+    font-family: 'Bebas Neue', 'Anton', sans-serif;
+  }
 
   body {
     background-color: var(--bg-deep);

@@ -321,16 +321,16 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* 2026 Premium Headline (Gradient Fade & Modern Typography) */}
-          <div className="mb-6 md:mb-8 flex flex-col gap-1">
+          {/* 2026 Premium Block Headline (THEBLOCK font style with vertical gradient fill) */}
+          <div className="mb-6 md:mb-8 flex flex-col gap-0 font-block tracking-wide">
             <motion.div
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="block font-black uppercase leading-[0.9] tracking-tight text-white"
-                style={{ fontSize: 'clamp(2.8rem, 7.5vw, 6rem)' }}>
-                BUILD YOUR BODY.
+              <span className="block font-black uppercase leading-[0.88] bg-gradient-to-b from-white via-[#f0f0f0] to-[#b0b0b0] bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+                style={{ fontSize: 'clamp(3.5rem, 9.5vw, 7.5rem)' }}>
+                BUILD YOUR BODY
               </span>
             </motion.div>
 
@@ -339,9 +339,9 @@ export default function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="block font-black uppercase leading-[0.9] tracking-tight bg-gradient-to-r from-[#F32D4B] via-[#FF5C72] to-[#F32D4B] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(243,45,75,0.4)]"
-                style={{ fontSize: 'clamp(2.8rem, 7.5vw, 6rem)' }}>
-                BUILD YOUR LEGACY.
+              <span className="block font-black uppercase leading-[0.88] bg-gradient-to-b from-white via-[#FF6B81] to-[#F32D4B] bg-clip-text text-transparent drop-shadow-[0_10px_30px_rgba(243,45,75,0.6)]"
+                style={{ fontSize: 'clamp(3.5rem, 9.5vw, 7.5rem)' }}>
+                BUILD YOUR LEGACY
               </span>
             </motion.div>
           </div>
