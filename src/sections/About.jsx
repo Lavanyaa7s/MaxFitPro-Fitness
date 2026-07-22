@@ -17,7 +17,7 @@ export default function About() {
             <img 
               src="/images/fitness-program.png" 
               alt="Fitness Training" 
-              className="w-full h-full object-cover grayscale contrast-125 hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover grayscale-0 md:grayscale md:contrast-125 hover:scale-105 transition-all duration-700"
             />
             {/* Raw Stat Overlay */}
             <div className="absolute bottom-0 left-0 bg-accent text-white p-6 md:p-8 w-2/3 max-w-[300px]">

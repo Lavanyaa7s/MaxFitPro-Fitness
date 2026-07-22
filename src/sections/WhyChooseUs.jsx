@@ -76,7 +76,7 @@ export default function WhyChooseUs() {
             <img 
               src="/images/fitness-program.png" 
               alt="Dedication" 
-              className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 hover:scale-105 transition-transform duration-700"
+              className="absolute inset-0 w-full h-full object-cover grayscale-0 md:grayscale md:contrast-125 hover:scale-105 transition-all duration-700"
             />
             {/* Hard brutalist accent border */}
             <div className="absolute top-8 -left-8 w-full h-full border-4 border-accent pointer-events-none hidden md:block" />

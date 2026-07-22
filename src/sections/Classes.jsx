@@ -73,12 +73,12 @@ export default function Classes() {
                 <img 
                   src={cls.img} 
                   alt={cls.title} 
-                  className="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                  className="w-full h-full object-cover grayscale-0 md:grayscale opacity-90 md:opacity-60 group-hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                 />
               </div>
               
-              {/* Color Overlay on Hover */}
-              <div className="absolute inset-0 bg-accent/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Color Overlay on Hover / Active */}
+              <div className="absolute inset-0 bg-accent/80 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
               {/* Content */}
               <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
