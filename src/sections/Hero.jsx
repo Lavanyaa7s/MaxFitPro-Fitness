@@ -308,41 +308,40 @@ export default function Hero() {
           style={{ x: textX, y: textY }}
           className="flex-1 flex flex-col justify-center py-8 md:py-0 z-20 relative order-2 md:order-1 text-center md:text-left items-center md:items-start"
         >
-          {/* Overline */}
+          {/* Overline Badge (Glass effect + subtle red glow) */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="flex items-center gap-3 mb-6 md:mb-8"
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md mb-6 shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
           >
-            <div className="w-8 h-px hidden md:block" style={{ background: 'linear-gradient(90deg, #F32D4B, #FF5C72)' }} />
-            <span className="uppercase tracking-[0.3em] text-[10px] font-bold" style={{ color: '#FF5C72' }}>
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_#F32D4B]" />
+            <span className="uppercase tracking-[0.25em] text-[10px] font-bold text-white/90">
               Pontian's Premier Gym
             </span>
-            <div className="w-8 h-px hidden md:block" style={{ background: 'linear-gradient(270deg, #F32D4B, #FF5C72)' }} />
           </motion.div>
 
-          {/* Editorial headline */}
+          {/* 2026 Premium Headline (Gradient Fade & Modern Typography) */}
           <div className="mb-6 md:mb-8 flex flex-col gap-1">
             <motion.div
-              initial={{ y: 60, opacity: 0 }}
+              initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="block font-black uppercase leading-[0.85] tracking-tighter"
-                style={{ fontSize: 'clamp(3rem, 8vw, 6.5rem)', color: '#EDEDED' }}>
-                BUILD YOUR BODY
+              <span className="block font-black uppercase leading-[0.9] tracking-tight text-white"
+                style={{ fontSize: 'clamp(2.8rem, 7.5vw, 6rem)' }}>
+                BUILD YOUR BODY.
               </span>
             </motion.div>
 
             <motion.div
-              initial={{ y: 60, opacity: 0 }}
+              initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="block font-black uppercase leading-[0.85] tracking-tighter text-accent"
-                style={{ fontSize: 'clamp(3rem, 8vw, 6.5rem)' }}>
-                BUILD YOUR LEGACY
+              <span className="block font-black uppercase leading-[0.9] tracking-tight bg-gradient-to-r from-[#F32D4B] via-[#FF5C72] to-[#F32D4B] bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(243,45,75,0.4)]"
+                style={{ fontSize: 'clamp(2.8rem, 7.5vw, 6rem)' }}>
+                BUILD YOUR LEGACY.
               </span>
             </motion.div>
           </div>
