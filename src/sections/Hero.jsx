@@ -323,9 +323,9 @@ export default function Hero() {
           </motion.div>
 
           {/* Editorial headline */}
-          <div className="mb-6 md:mb-8 overflow-hidden flex flex-col gap-1">
+          <div className="mb-6 md:mb-8 flex flex-col gap-1">
             <motion.div
-              initial={{ y: 80, opacity: 0 }}
+              initial={{ y: 60, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             >
@@ -340,28 +340,9 @@ export default function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="block font-black uppercase leading-[0.85] tracking-tighter"
-                style={{ 
-                  fontSize: 'clamp(3rem, 8vw, 6.5rem)', 
-                  color: 'transparent',
-                  WebkitTextStroke: '2px rgba(255,255,255,0.4)'
-                }}>
-                BUILD YOUR
-              </span>
-            </motion.div>
-
-            <motion.div
-              initial={{ y: 60, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.9, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <span className="block font-black uppercase leading-[0.85] tracking-tighter"
-                style={{ 
-                  fontSize: 'clamp(3rem, 8vw, 6.5rem)', 
-                  color: 'transparent',
-                  WebkitTextStroke: '2px rgba(255,255,255,0.4)'
-                }}>
-                HABITS!
+              <span className="block font-black uppercase leading-[0.85] tracking-tighter text-accent"
+                style={{ fontSize: 'clamp(3rem, 8vw, 6.5rem)' }}>
+                BUILD YOUR LEGACY
               </span>
             </motion.div>
           </div>
