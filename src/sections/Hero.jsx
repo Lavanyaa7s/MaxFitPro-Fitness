@@ -262,22 +262,22 @@ export default function Hero() {
             }}
           />
 
-          {/* Floating Badges for Mobile & Desktop (Fills empty space with high-energy highlights) */}
+          {/* Floating Badges for Mobile & Desktop (Positioned high at top so they clear athlete head) */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="absolute top-8 left-2 md:left-6 z-20 px-3 py-1.5 rounded-full bg-black/60 border border-accent/40 backdrop-blur-md flex items-center gap-2 shadow-lg pointer-events-none"
+            className="absolute top-1 left-2 md:top-6 md:left-6 z-20 px-3 py-1 rounded-full bg-black/70 border border-accent/40 backdrop-blur-md flex items-center gap-2 shadow-lg pointer-events-none"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
             <span className="text-[10px] font-black uppercase tracking-wider text-white">🏆 10K SQFT GYM</span>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="absolute top-16 right-2 md:right-6 z-20 px-3 py-1.5 rounded-full bg-black/60 border border-accent/40 backdrop-blur-md flex items-center gap-2 shadow-lg pointer-events-none"
+            className="absolute top-1 right-2 md:top-6 md:right-6 z-20 px-3 py-1 rounded-full bg-black/70 border border-accent/40 backdrop-blur-md flex items-center gap-2 shadow-lg pointer-events-none"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-[10px] font-black uppercase tracking-wider text-white">⚡ PRO EQUIPMENT</span>
