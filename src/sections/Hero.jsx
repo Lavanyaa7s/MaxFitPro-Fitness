@@ -235,11 +235,11 @@ export default function Hero() {
             <span
               className="font-black uppercase text-center leading-none"
               style={{
-                fontSize: 'clamp(3rem, 9vw, 8rem)',
-                color: 'transparent',
-                WebkitTextStroke: '1px rgba(243,45,75,0.12)',
+                fontSize: 'clamp(4rem, 12vw, 9rem)',
+                color: 'rgba(243,45,75,0.06)',
+                WebkitTextStroke: '2px rgba(243,45,75,0.3)',
                 letterSpacing: '-0.02em',
-                lineHeight: 1,
+                lineHeight: 0.9,
                 whiteSpace: 'nowrap',
               }}
             >
@@ -254,12 +254,34 @@ export default function Hero() {
             transition={{ duration: 1.2, delay: 0.8 }}
             className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full pointer-events-none"
             style={{
-              width: '75%',
-              paddingBottom: '75%',
-              border: '1px solid rgba(243,45,75,0.12)',
-              boxShadow: '0 0 80px 20px rgba(243,45,75,0.05)',
+              width: '85%',
+              paddingBottom: '85%',
+              border: '1px solid rgba(243,45,75,0.25)',
+              background: 'radial-gradient(circle, rgba(243,45,75,0.15) 0%, transparent 70%)',
+              boxShadow: '0 0 80px 20px rgba(243,45,75,0.1)',
             }}
           />
+
+          {/* Floating Badges for Mobile & Desktop (Fills empty space with high-energy highlights) */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="absolute top-8 left-2 md:left-6 z-20 px-3 py-1.5 rounded-full bg-black/60 border border-accent/40 backdrop-blur-md flex items-center gap-2 shadow-lg pointer-events-none"
+          >
+            <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
+            <span className="text-[10px] font-black uppercase tracking-wider text-white">🏆 10K SQFT GYM</span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="absolute top-16 right-2 md:right-6 z-20 px-3 py-1.5 rounded-full bg-black/60 border border-accent/40 backdrop-blur-md flex items-center gap-2 shadow-lg pointer-events-none"
+          >
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-[10px] font-black uppercase tracking-wider text-white">⚡ PRO EQUIPMENT</span>
+          </motion.div>
 
           {/* Breathing red glow behind athlete (Optimized for mobile: Removed CSS blur filter) */}
           <motion.div
