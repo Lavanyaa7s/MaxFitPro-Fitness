@@ -224,28 +224,6 @@ export default function Hero() {
 
         {/* RIGHT — Cinematic Athlete (order-1 on mobile so it's on top, order-2 on desktop) */}
         <div className="flex-1 relative flex items-end justify-center md:justify-end self-end h-[45dvh] md:h-[100dvh] w-full z-0 overflow-visible order-1 md:order-2 mt-4 md:mt-0">
-          
-          {/* Signature element: giant "NO EXCUSES" behind athlete */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, delay: 0.6 }}
-            className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
-          >
-            <span
-              className="font-black uppercase text-center leading-none"
-              style={{
-                fontSize: 'clamp(4rem, 12vw, 9rem)',
-                color: 'rgba(243,45,75,0.06)',
-                WebkitTextStroke: '2px rgba(243,45,75,0.3)',
-                letterSpacing: '-0.02em',
-                lineHeight: 0.9,
-                whiteSpace: 'nowrap',
-              }}
-            >
-              NO<br/>EXCUSES
-            </span>
-          </motion.div>
 
           {/* Outlined circle behind athlete */}
           <motion.div
